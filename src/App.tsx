@@ -2,6 +2,13 @@ import { useState } from "react";
 
 export default function Board() {
   const [square, setSquare] = useState< null[] | string[] >(Array(9).fill(null));
+
+  function handleClick(){
+    const nextSquares = square.slice();
+    nextSquares[0] = "X";
+    setSquare(nextSquares);
+  }
+
   return (
     <>
       <div className="board-row">
@@ -25,7 +32,7 @@ export default function Board() {
 
 interface MyButtonProps {
   value : null | string,
-  onSquareClick : null | string
+  onSquareClick : string
 }
 
 function Square({ value, onSquareClick } : MyButtonProps){
