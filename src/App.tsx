@@ -19,12 +19,12 @@ export default function Board() {
   }
 
   const winner = calculateWinner(squares);
-  let status : string;
-  if(winner){
-    status = "Winner: " + winner;
+  let status;
+  if (winner) {
+    status = 'Winner: ' + winner;
   } else {
-    status = "Next Player: " + (xIsNext ? "X" : "O");
-  }  
+    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+  }
 
   return (
     <>
